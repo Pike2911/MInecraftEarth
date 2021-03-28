@@ -16,7 +16,10 @@ public class rayboxgetter : MonoBehaviour
             {
                 if (hit.collider != null)
                 {
-                    hit.collider.gameObject.SetActive(false);
+                    if (!hit.collider.gameObject.CompareTag("Player") )
+                    {
+                        hit.collider.gameObject.SetActive(false);
+                    }
                 }
             }
         }
