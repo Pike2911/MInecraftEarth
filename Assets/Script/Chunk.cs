@@ -10,6 +10,7 @@ public class Chunk : MonoBehaviour
 
     private void Start()
     {
+        
         _floor = 0;
         _floor1 = 0;
         for (int _floor = 0; _floor < 50; _floor++)

@@ -6,11 +6,12 @@ public class rayboxgetter : MonoBehaviour
 {
     void Update()
     {
-        Debug.DrawRay(transform.position, Camera.main.ScreenPointToRay(Input.mousePosition).direction * 100, Color.green);
+        Debug.DrawRay(transform.position, Camera.main.transform.forward * 100, Color.green);
+
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
 
             if (Physics.Raycast(ray, out hit))
             {
@@ -19,6 +20,7 @@ public class rayboxgetter : MonoBehaviour
                     if (!hit.collider.gameObject.CompareTag("Player") )
                     {
                         hit.collider.gameObject.SetActive(false);
+                        Debug.Log(hit.collider.gameObject);
                     }
                 }
             }
