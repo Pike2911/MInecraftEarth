@@ -12,10 +12,10 @@ public class Chunk : MonoBehaviour
     {
         _floor = 0;
         _floor1 = 0;
-        for (int _floor = 0; _floor < 100; _floor++)
+        for (int _floor = 0; _floor < 50; _floor++)
         {
             
-            for (int _floor1 = 0; _floor1 < 100; _floor1++)
+            for (int _floor1 = 0; _floor1 < 50; _floor1++)
             {
                 Instantiate(Block, new Vector3(_floor, 0, _floor1), transform.rotation);
             }
