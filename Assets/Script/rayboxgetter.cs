@@ -17,6 +17,7 @@ public class rayboxgetter : MonoBehaviour
                 if (hit.collider != null)
                 {
                     hit.collider.gameObject.SetActive(false);
+                    Debug.Log("slkdfjd");
                 }
             }
         }
