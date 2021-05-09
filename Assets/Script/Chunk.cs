@@ -5,22 +5,28 @@ using UnityEngine;
 public class Chunk : MonoBehaviour
 {
     [SerializeField] private GameObject Block;
-    private int _floor;
-    private int _floor1;
-
+     
     private void Start()
     {
         
-        _floor = 0;
-        _floor1 = 0;
-        for (int _floor = 0; _floor < 100; _floor++)
+        int wild = 100;
+        int length = 100;
+        for (int x = 0; x < wild; x++)
         {
             
-            for (int _floor1 = 0; _floor1 < 100; _floor1++)
+            for (int  z = 0; z < length; z++)
             {
-                Instantiate(Block, new Vector3(_floor, 0, _floor1), transform.rotation);
+                int y = Gethight(x, z);
+                Instantiate(Block, new Vector3(x, y, z), transform.rotation);
             }
         }
         
+    }
+    int Gethight(int x, int z)
+    {
+        int y = 0;
+        y = (int)(Mathf.PerlinNoise((float)x / 100.0f , (float)z / 100.0f) * 100);
+
+        return y;
     }
 }

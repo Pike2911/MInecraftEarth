@@ -43,6 +43,5 @@ public class treechunk : MonoBehaviour
 
             }
         }
-        Debug.Log(trees.Count);
     }
 }
