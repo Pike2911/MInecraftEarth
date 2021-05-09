@@ -15,7 +15,12 @@ public class treechunk : MonoBehaviour
 
         trees = new List<GameObject>();
 
-        trees.Add(Instantiate(Treeload, new Vector3(Random.Range(0, 100), 1, Random.Range(0, 100)),transform.rotation));
+        int x1 = Random.Range(0, 100);
+        int z1 = Random.Range(0, 100);
+        int y1 = GetComponent<Chunk>().map[x1, z1];
+
+        trees.Add(Instantiate(Treeload, new Vector3(x1, y1, z1),transform.rotation));
+
         int Count = 0;
 
         while ( trees.Count < 100 && Count < 100)
@@ -39,6 +44,8 @@ public class treechunk : MonoBehaviour
             }
             if (canplant)
             {
+                loc.y = GetComponent<Chunk>().map[ (int)loc.x, (int)loc.z ];
+
                 trees.Add(Instantiate(Treeload, loc, transform.rotation));
 
             }
