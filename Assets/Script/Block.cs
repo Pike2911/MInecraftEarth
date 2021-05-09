@@ -5,6 +5,7 @@ using UnityEngine;
 public class Block : MonoBehaviour
 {
     int _Hp = 3;
+    public GameObject effect;
   
     public void TakeDamage ()
     {
@@ -13,6 +14,8 @@ public class Block : MonoBehaviour
 
     void die()
     {
+        GameObject p = Instantiate(effect, transform.position, effect.transform.rotation);
+        Destroy(p, p.GetComponent<ParticleSystem>().main.duration);
         gameObject.SetActive(false);
     }
 

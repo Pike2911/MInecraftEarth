@@ -39,10 +39,32 @@ public class treechunk : MonoBehaviour
             }
             if (canplant)
             {
-                trees.Add(Instantiate(Treeload, loc, transform.rotation));
+                createTree(loc);
 
             }
         }
         Debug.Log(trees.Count);
     }
+
+    private void createTree(Vector3 loc)
+    {
+
+        RaycastHit hit;
+        Ray r = new Ray(new Vector3(loc.x, 100, loc.z), -Vector3.up);
+        Physics.Raycast(r, out hit, 200);
+
+        if (hit.collider != null)
+        {
+            Debug.Log("add tree " + hit.collider.gameObject.transform.position);
+            trees.Add(Instantiate(Treeload, hit.collider.gameObject.transform.position, transform.rotation));
+        }
+        else
+        {
+            print("no tree");
+        }
+
+        
+    }
+
+
 }
