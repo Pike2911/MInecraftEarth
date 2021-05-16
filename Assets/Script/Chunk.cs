@@ -5,6 +5,7 @@ using UnityEngine;
 public class Chunk : MonoBehaviour
 {
     [SerializeField] private GameObject Block;
+    [SerializeField] private GameObject Blockdirt;
 
     public int[,] map;
 
@@ -14,6 +15,7 @@ public class Chunk : MonoBehaviour
 
         int wide = 100;
         int length = 100;
+        int hight = 4;
 
         map = new int[wide, length];
 
@@ -21,22 +23,25 @@ public class Chunk : MonoBehaviour
         {
             for (int  z = 0; z < length; z++)
             {
-                int y = Gethight(x, z);
+                for(int y = 0; y < hight; y++)
+                {
+                    int offsety = Gethight(x, z);
 
-                map[x, z] = y;
+                    map[x, z] = offsety + y;
 
-                Instantiate(Block, new Vector3(x, y, z), transform.rotation);
+                    if (y < 3)
+                    {
+                        Instantiate(Blockdirt, new Vector3(x, y + offsety, z), transform.rotation);
+                    }
+                    else if (y == 3)
+                    {
+                        Instantiate(Block, new Vector3(x, y + offsety, z), transform.rotation);
+                    }
+
+                }
+                
             }
         }
-
-
-        //for (int i = 0; i < wide; i++)
-        //{
-        //    for (int j = 0; j < length; j++)
-        //    {
-        //        print(map[i, j]);
-        //    }
-        //}
         
     }
 
