@@ -6,19 +6,22 @@ public class rayboxgetter : MonoBehaviour
 {
     void Update()
     {
-        Debug.DrawRay(transform.position, Camera.main.transform.forward * 100, Color.green);
+        int layerMask = 1 << 8;
+
+        Debug.DrawRay(transform.position, Camera.main.transform.forward * 100, Color.red);
 
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
             Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit,Mathf.Infinity,layerMask)) 
             {
                 if (hit.collider != null)
                 {
                     if (!hit.collider.gameObject.CompareTag("Player") )
                     {
+
                         hit.collider.gameObject.GetComponent<Block>().TakeDamage();
                     }
                 }

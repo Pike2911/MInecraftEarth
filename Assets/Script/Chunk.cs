@@ -25,7 +25,7 @@ public class Chunk : MonoBehaviour
             {
                 for(int y = 0; y < hight; y++)
                 {
-                    int offsety = Gethight(x, z);
+                    int offsety = Mathf.Max(Gethight(x, z), 28);
 
                     map[x, z] = offsety + y;
 
@@ -37,12 +37,10 @@ public class Chunk : MonoBehaviour
                     {
                         Instantiate(Block, new Vector3(x, y + offsety, z), transform.rotation);
                     }
-
                 }
                 
             }
         }
-        
     }
 
     int Gethight(int x, int z)

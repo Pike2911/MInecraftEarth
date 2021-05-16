@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 4298652751692271542}
   - component: {fileID: 1013678294594999213}
   - component: {fileID: 614377000573256354}
-  m_Layer: 0
-  m_Name: Wood tree (1)
+  m_Layer: 8
+  m_Name: Wood tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
