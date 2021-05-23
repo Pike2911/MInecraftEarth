@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    [SerializeField] private GameObject itemGlass;
+    [SerializeField] private GameObject item;
     int _Hp = 3;
   
     public void TakeDamage ()
@@ -14,7 +14,7 @@ public class Block : MonoBehaviour
 
     void die()
     {
-        Instantiate(itemGlass, transform.position,transform.rotation);
+        Instantiate(item, transform.position,transform.rotation);
          
         gameObject.SetActive(false);
     }
