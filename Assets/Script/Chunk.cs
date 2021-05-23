@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Chunk : MonoBehaviour
 {
-    [SerializeField] private GameObject Block;
-    [SerializeField] private GameObject Blockdirt;
+    [SerializeField] private GameObject Block=null;
+    [SerializeField] private GameObject Blockdirt=null;
 
     public int[,] map;
 

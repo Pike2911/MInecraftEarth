@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class treechunk : MonoBehaviour
 {
-    [SerializeField] private GameObject Treeload;
-    private int _bigtree;
+    [SerializeField] private GameObject Treeload=null;
 
     private List<GameObject> trees;
 
     private void Start()
     {
-        _bigtree = 0;
-
         trees = new List<GameObject>();
 
         int x1 = Random.Range(0, 100);

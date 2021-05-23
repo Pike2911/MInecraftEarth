@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
-    [SerializeField] float speedx;
-    [SerializeField] float speedy;
-    [SerializeField] float speedz;
+    [SerializeField] float speedx=0f;
+    [SerializeField] float speedy=1f;
+    [SerializeField] float speedz=0f;
 
     float x = 0;
     float y = 0;

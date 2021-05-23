@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    [SerializeField] private GameObject item;
+    [SerializeField] private GameObject item=null;
     int _Hp = 3;
   
     public void TakeDamage ()
