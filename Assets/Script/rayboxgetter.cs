@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rayboxgetter : MonoBehaviour
+public class RayBoxGetter : MonoBehaviour
 {
     void Update()
     {

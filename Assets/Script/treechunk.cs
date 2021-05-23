@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class treechunk : MonoBehaviour
+public class TreeChunk : MonoBehaviour
 {
     [SerializeField] private GameObject Treeload=null;
 
