@@ -19,7 +19,7 @@ public class Collectable : MonoBehaviour
     }
     private void Update()
     {
-        GetComponent<Transform>().rotation = Quaternion.Euler(x, y, z);
+        transform.rotation = Quaternion.Euler(x, y, z);
 
         x = x + speedx;
         y = y + speedy;
