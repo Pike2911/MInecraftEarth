@@ -17,8 +17,10 @@ namespace PGME.Scene
 
         void Die()
         {
-            Instantiate(item, transform.position, transform.rotation);
-
+            if (item != null)
+            {
+                Instantiate(item, transform.position, transform.rotation);
+            }
             gameObject.SetActive(false);
         }
 
