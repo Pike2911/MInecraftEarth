@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7285499589300674646}
   - component: {fileID: 726158423407160125}
   m_Layer: 8
-  m_Name: dirt item
+  m_Name: DirtItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,3 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e74d1e4b171d3bb4f8b3ae207c3e99ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedx: 0
+  speedy: 10
+  speedz: 0

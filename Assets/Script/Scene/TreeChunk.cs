@@ -45,6 +45,8 @@ namespace PGME.Scene
                 {
                     loc.y = GetComponent<Chunk>().map[(int)loc.x, (int)loc.z];
 
+                    loc.y += 1;
+
                     trees.Add(Instantiate(Treeload, loc, transform.rotation));
 
                 }
