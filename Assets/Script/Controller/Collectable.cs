@@ -20,7 +20,7 @@ namespace PGME.Controller
             player.GetComponent<Player>().increaseBlock();
             Destroy(gameObject);
         }
-        private void Update()
+        private void FixedUpdate()
         {
             transform.rotation = Quaternion.Euler(x, y, z);
 

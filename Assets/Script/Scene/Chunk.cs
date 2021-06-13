@@ -10,7 +10,7 @@ namespace PGME.Scene
         [SerializeField] private GameObject Blockdirt = null;
 
         public int[,] map;
-        public bool[,] mapVisible;
+        public bool[,,] mapVisible;
 
 
         int wide = 150;
@@ -25,14 +25,17 @@ namespace PGME.Scene
             player = GameObject.FindGameObjectWithTag("Player");
 
             map = new int[wide, length];
-            mapVisible = new bool[wide, length];
+            mapVisible = new bool[wide, hight, length];
 
 
             for (int x = 0; x < wide; x++)
             {
                 for (int z = 0; z < length; z++)
                 {
-                    mapVisible[x, z] = false;
+                    for (int y = 0; y < hight; y++)
+                    {
+                        mapVisible[x, y, z] = false;
+                    }
                 }
             }    
 
@@ -57,7 +60,7 @@ namespace PGME.Scene
 
                     for (int y = 0; y < hight; y++)
                     {
-                        if (mapVisible[x, z] == false)
+                        if (mapVisible[x, y, z] == false)
                         {
                             int offsety = Mathf.Max(GetHight(x, z), 28);
 
@@ -72,7 +75,7 @@ namespace PGME.Scene
                                 Instantiate(Block, new Vector3(x, y + offsety, z), transform.rotation);
                             }
 
-                            mapVisible[x, z] = true;
+                            mapVisible[x, y, z] = true;
                         }
 
                     }
