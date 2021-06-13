@@ -8,15 +8,16 @@ namespace PGME.Scene
     {
         [SerializeField] private GameObject Block = null;
         [SerializeField] private GameObject Blockdirt = null;
+        
 
         public int[,] map;
         public bool[,,] mapVisible;
 
 
-        int wide = 150;
-        int length = 150;
-        int hight = 2;
-        int eyeSight = 5;
+        [SerializeField] private int wide = 150;
+        [SerializeField] private int length = 150;
+        [SerializeField] private int hight = 2;
+        [SerializeField] private int eyeSight = 5;
 
         GameObject player;
 
