@@ -24,6 +24,11 @@ namespace PGME.Scene
             gameObject.SetActive(false);
         }
 
+        public bool IsDeath()
+        {
+            return _Hp == 0;
+        }
+
         private void Update()
         {
             if (_Hp == 0)

@@ -11,7 +11,7 @@ namespace PGME.Scene
         
 
         public int[,] map;
-        public bool[,,] mapVisible;
+        public Block[,,] mapVisible;
 
 
         [SerializeField] private int wide = 150;
@@ -19,40 +19,32 @@ namespace PGME.Scene
         [SerializeField] private int hight = 2;
         [SerializeField] private int eyeSight = 5;
 
+
         GameObject player;
 
         private void Start()
         {
+
+          
+
             player = GameObject.FindGameObjectWithTag("Player");
 
             map = new int[wide, length];
-            mapVisible = new bool[wide, hight, length];
+            mapVisible = new Block[wide, hight, length];
 
-
-            for (int x = 0; x < wide; x++)
-            {
-                for (int z = 0; z < length; z++)
-                {
-                    for (int y = 0; y < hight; y++)
-                    {
-                        mapVisible[x, y, z] = false;
-                    }
-                }
-            }    
-
-
-            
         }
         private void Update()
         {
 
             Vector3 playerPosition = player.transform.position;
 
-            int rightBound = (int)Mathf.Min(playerPosition.x + eyeSight,wide);
-            int leftBound = (int)Mathf.Max(playerPosition.x - eyeSight,0);
+            int rightBound = (int)Mathf.Min(playerPosition.x + eyeSight, wide);
+            int leftBound = (int)Mathf.Max(playerPosition.x - eyeSight, 0);
 
             int bottomBound = (int)Mathf.Min(playerPosition.z + eyeSight, length);
-            int topBound = (int)Mathf.Max(playerPosition.z - eyeSight,0);
+            int topBound = (int)Mathf.Max(playerPosition.z - eyeSight, 0);
+
+            cleanmap();
 
             for (int x = leftBound; x < rightBound; x++)
             {
@@ -61,22 +53,31 @@ namespace PGME.Scene
 
                     for (int y = 0; y < hight; y++)
                     {
-                        if (mapVisible[x, y, z] == false)
+                        if (mapVisible[x, y, z] == null)
                         {
-                            int offsety = Mathf.Max(GetHight(x, z), 28);
+                            mapVisible[x, y, z] = CreateBlock(x, z, y);
+                        }
+                        else if (mapVisible[x, y, z].gameObject.activeSelf == false && !mapVisible[x, y, z].IsDeath())
+                        {
+                            mapVisible[x, y, z].gameObject.SetActive(true);
+                        }
+                    }
+                }
+            }
+        }
 
-                            map[x, z] = offsety + y;
+        private void cleanmap()
+        {
+            for (int x = 0; x < wide; x++)
+            {
+                for (int z = 0; z < length; z++)
+                {
 
-                            if (y < 1)
-                            {
-                                Instantiate(Blockdirt, new Vector3(x, y + offsety, z), transform.rotation);
-                            }
-                            else if (y == 1)
-                            {
-                                Instantiate(Block, new Vector3(x, y + offsety, z), transform.rotation);
-                            }
-
-                            mapVisible[x, y, z] = true;
+                    for (int y = 0; y < hight; y++)
+                    {
+                        if (mapVisible[x, y, z] != null)
+                        {
+                            mapVisible[x, y, z].gameObject.SetActive(false);
                         }
 
                     }
@@ -84,6 +85,26 @@ namespace PGME.Scene
                 }
             }
         }
+
+        private Block CreateBlock(int x, int z, int y)
+        {
+            GameObject returnBlock = null;
+            int offsety = Mathf.Max(GetHight(x, z), 28);
+
+            map[x, z] = offsety + y;
+
+            if (y < hight - 1)
+            {
+                returnBlock = Instantiate(Blockdirt, new Vector3(x, y + offsety, z), transform.rotation);
+            }
+            else if (y == hight - 1)
+            {
+                returnBlock = Instantiate(Block, new Vector3(x, y + offsety, z), transform.rotation);
+            }
+
+            return returnBlock.GetComponent<Block>();
+        }
+
         int GetHight(int x, int z)
         {
             int y = 0;
