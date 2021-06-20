@@ -11,13 +11,15 @@ namespace PGME.Controller
         [SerializeField] float speedy = 1f;
         [SerializeField] float speedz = 0f;
 
+        [SerializeField] string BlockType = "";
+
         float x = 0;
         float y = 0;
         float z = 0;
         private void OnTriggerEnter(Collider other)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-            player.GetComponent<Player>().increaseBlock();
+            player.GetComponent<Player>().increaseBlock( BlockType );
             Destroy(gameObject);
         }
         private void FixedUpdate()

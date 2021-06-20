@@ -6,13 +6,32 @@ namespace PGME.Core
 {
     public class Player : MonoBehaviour
     {
-        private int myscore = 0;
 
-        public void increaseBlock()
+        public int wood = 0;
+        public int dirt = 0;
+        public int grass = 0;
+
+
+        public void increaseBlock(string BlockType)
         {
-            myscore = myscore + 10;
+            if(BlockType == "wood")
+            {
+                wood = wood + 10;
 
-            Debug.Log(myscore);
+                Debug.Log(wood);
+            }
+            else if(BlockType == "dirt")
+            {
+                dirt = dirt + 20;
+
+                Debug.Log(dirt);
+            }
+            else if(BlockType == "grass")
+            {
+                grass = grass + 30;
+
+                Debug.Log(grass);
+            }
         }
     }
 }

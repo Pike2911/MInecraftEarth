@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6265805950278002922}
   - component: {fileID: 8942381097487665016}
   - component: {fileID: 1455700783491033295}
-  - component: {fileID: 5789339087780032595}
   - component: {fileID: 7285499589300674646}
   - component: {fileID: 726158423407160125}
   m_Layer: 8
@@ -96,19 +95,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.131822, y: 1.899445, z: 1.977038}
   m_Center: {x: -0.06591117, y: 0.08151495, z: -0.01124817}
---- !u!114 &5789339087780032595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7295492247947497071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afc720291034eb84abcfd9a7ffc5e173, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 0}
 --- !u!65 &7285499589300674646
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -137,3 +123,4 @@ MonoBehaviour:
   speedx: 0
   speedy: 10
   speedz: 0
+  BlockType: dirt
