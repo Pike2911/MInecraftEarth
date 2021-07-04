@@ -33,6 +33,12 @@ namespace PGME.Core
                 Debug.Log(grass);
             }
         }
+
+        public void decreaseBlock()
+        {
+            dirt -= 20;
+        }
+
     }
 }
 

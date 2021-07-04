@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: d0523d8917957bb429a32997cb0e52b2, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -260,10 +260,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 134.58148, y: -29.976318, z: 51.3125}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1328210396}
-  - {fileID: 708279019}
-  - {fileID: 763243057}
+  m_Children: []
   m_Father: {fileID: 1049134268}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -314,15 +311,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708279018}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -51.3125}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 417429351}
-  m_RootOrder: 1
+  m_Father: {fileID: 1049134268}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -418.98148, y: -148.85368}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 81.599976, y: 27.170013}
   m_SizeDelta: {x: 49.070007, y: 29.998962}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &708279020
@@ -392,15 +389,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763243056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -51.3125}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 417429351}
-  m_RootOrder: 2
+  m_Father: {fileID: 1049134268}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -371.08148, y: -148.85368}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 129.5, y: 27.170013}
   m_SizeDelta: {x: 46.734436, y: 29.997925}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &763243058
@@ -476,15 +473,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328210395}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -51.3125}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 417429351}
-  m_RootOrder: 0
+  m_Father: {fileID: 1049134268}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -468.05148, y: -150.02368}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 32.53003, y: 26}
   m_SizeDelta: {x: 49.069824, y: 32.335846}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1328210397
@@ -697,6 +694,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Core
       objectReference: {fileID: 0}
+    - target: {fileID: 1666739432551510973, guid: 721b05133a04a7540b27a9e95683fa76,
+        type: 3}
+      propertyPath: dirt
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3916547299356890285, guid: 721b05133a04a7540b27a9e95683fa76,
         type: 3}
       propertyPath: advancedSettings.airControl
@@ -723,6 +725,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4701323658900598083, guid: 11955488e6ed10f4b8cfb842bb857594,
         type: 3}
+    - target: {fileID: 3916547300892421049, guid: 721b05133a04a7540b27a9e95683fa76,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.14737798
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916547300892421049, guid: 721b05133a04a7540b27a9e95683fa76,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.091313645
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916547300892421049, guid: 721b05133a04a7540b27a9e95683fa76,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.7169812
+      objectReference: {fileID: 0}
     - target: {fileID: 5830388079313152213, guid: 721b05133a04a7540b27a9e95683fa76,
         type: 3}
       propertyPath: m_LocalPosition.x
